@@ -70,27 +70,12 @@ class HomeController extends Controller
             $user = new User();
             $user->name = $request->name;
             $user->email = $request->email;
-            $user->password_hint = $request->password;
             $user->password = bcrypt($request->password);
             $user->save();
             return back();
         } else {
             return back();
         }
-    }
-
-    public function notify($id)
-    {
-        $u = User::findOrFail($id);
-        $email = $u->email;
-        $subject = 'Püşkatmada iştirak etmədə iştirakçı kimi seçilmisiniz';
-        $data = $u;
-        \Mail::send('auth.emails.notify',['user' => $data], function($message) use ($email, $subject){
-            $message->from('puskatma@drinkshop.az', 'Püşkatma');
-            $message->sender('puskatma@drinkshop.az', 'Püşkatma');
-            $message->to( $email , 'Receiver')->subject($subject);
-        });
-        return back();
     }
 
     public function spinner(Request $request)
