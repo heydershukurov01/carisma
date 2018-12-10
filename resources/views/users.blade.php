@@ -16,7 +16,7 @@
         <thead>
         <tr>
             <th>№</th>
-            <th>Ad Soyad:</th>
+            <th>Ad Soyad</th>
             <th>E-Poçt</th>
             <th></th>
         </tr>
