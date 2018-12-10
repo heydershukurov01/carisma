@@ -6,7 +6,7 @@
             <div class="form-group"><label for="">E-Poçt:</label><input name="email" type="email" class="form-control"></div>
             <div class="form-group"><label for="">Şifrə:</label><input name="password" type="password" class="form-control"></div>
             <hr class="my-4">
-            <div class="alert alert-info">İştirakçıların adlarını, korporativ e-poçt ünvanlarını, və şifrəsini qeyd edin və Əlavə et düyməsini sıxın!</div>
+            <div class="alert alert-info">İştirakçıların adlarını, korporativ e-poçt ünvanlarını, və şifrəsini qeyd edin və Əlavə et düyməsini sıxın</div>
             <button type="submit" class="btn btn-primary btn-lg" href="#" role="button">Əlavə et!</button>
         </form>
     </div>
