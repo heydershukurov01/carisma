@@ -2,11 +2,11 @@
     <div class="jumbotron">
         <form action="{{route('store')}}" method="POST">
             {{csrf_field()}}
-            <div class="form-group"><label for="">Ad Soyad:</label><input name="name" type="text" class="form-control"></div>
-            <div class="form-group"><label for="">E-Poçt:</label><input name="email" type="email" class="form-control"></div>
-            <div class="form-group"><label for="">Şifrə:</label><input name="password" type="password" class="form-control"></div>
+            <div class="form-group"><label for="">Ad Soyad:</label><input name="name" type="text" class="form-control" required></div>
+            <div class="form-group"><label for="">E-Poçt:</label><input name="email" type="email" class="form-control" required></div>
+            <div class="form-group"><label for="">Şifrə:</label><input name="password" type="password" class="form-control" required></div>
             <hr class="my-4">
-            <div class="alert alert-info">İştirakçıların adlarını, korporativ e-poçt ünvanlarını, və şifrəsini qeyd edin və Əlavə et düyməsini sıxın</div>
+            <div class="alert alert-info">İştirakçıların adlarını, korporativ e-poçt ünvanlarını, və şifrəsini qeyd edin və Əlavə et düyməsini sıxın!</div>
             <button type="submit" class="btn btn-primary btn-lg" href="#" role="button">Əlavə et!</button>
         </form>
     </div>
@@ -16,7 +16,7 @@
         <thead>
         <tr>
             <th>№</th>
-            <th>Ad Soyad</th>
+            <th>Ad Soyad:</th>
             <th>E-Poçt</th>
             <th></th>
         </tr>
@@ -27,7 +27,9 @@
                 <td>{{(++$key)}}</td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
-                <td data-id="{{$user->id}}"></td>
+                <td data-id="{{$user->id}}">
+                    <a href="{{url('/notify/'.$user->id)}}" class="btn btn-primary">Göndər</a>
+                </td>
             </tr>
         @endforeach
         <tr>
