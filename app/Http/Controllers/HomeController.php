@@ -86,8 +86,8 @@ class HomeController extends Controller
         $subject = 'Püşkatmada iştirakçı kimi seçilmisiniz!';
         $data = $u;
         \Mail::send('auth.emails.notify',['user' => $data], function($message) use ($email, $subject){
-            $message->from('puskatma@drinkshop.az', 'Püşkatma');
-            $message->sender('puskatma@drinkshop.az', 'Püşkatma');
+            $message->from('secret.santa.egov.2018@gmail.com', 'Püşkatma');
+            $message->sender('secret.santa.egov.2018@gmail.com', 'Püşkatma');
             $message->to( $email , 'Receiver')->subject($subject);
         });
         return back();
