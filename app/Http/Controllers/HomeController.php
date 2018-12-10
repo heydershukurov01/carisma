@@ -83,7 +83,7 @@ class HomeController extends Controller
     {
         $u = User::findOrFail($id);
         $email = $u->email;
-        $subject = 'Püşkatmada iştirakçı kimi seçilmisiniz';
+        $subject = 'Püşkatmada iştirakçı kimi seçilmisiniz!';
         $data = $u;
         \Mail::send('auth.emails.notify',['user' => $data], function($message) use ($email, $subject){
             $message->from('puskatma@drinkshop.az', 'Püşkatma');
