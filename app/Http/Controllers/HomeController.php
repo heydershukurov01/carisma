@@ -78,6 +78,20 @@ class HomeController extends Controller
         }
     }
 
+    public function notify($id)
+    {
+        $u = User::findOrFail($id);
+        $email = $u->email;
+        $subject = 'Püşkatmada iştirakçı kimi seçilmisiniz';
+        $data = $u;
+        \Mail::send('auth.emails.notify',['user' => $data], function($message) use ($email, $subject){
+            $message->from('puskatma@drinkshop.az', 'Püşkatma');
+            $message->sender('puskatma@drinkshop.az', 'Püşkatma');
+            $message->to( $email , 'Receiver')->subject($subject);
+        });
+        return back();
+    }
+
     public function spinner(Request $request)
     {
         $user = null;
