@@ -320,7 +320,7 @@
                     method: 'POST',
                     success: function(data) {
                         alert('Müvəffəqiyyətlə seçim olundu');
-                        window.location.reload();
+                        console.log(data);
                     },
                     error: function(data) {
                         alert('Bu iştirakçı artıq seçilmişdir xahiş olunur yenidən seçim edin');

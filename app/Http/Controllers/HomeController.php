@@ -70,7 +70,6 @@ class HomeController extends Controller
             $user = new User();
             $user->name = $request->name;
             $user->email = $request->email;
-            $user->password_hint = $request->password;
             $user->password = bcrypt($request->password);
             $user->save();
             return back();

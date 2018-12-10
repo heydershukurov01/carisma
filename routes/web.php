@@ -33,4 +33,3 @@ $this->post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/user', 'HomeController@store')->name('store');
 Route::post('/spin', 'HomeController@spinner')->name('spin');
-Route::get('/notify/{id}', 'HomeController@notify')->name('notify');
